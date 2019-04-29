@@ -2,19 +2,16 @@
 <html>
 <head>
 <meta charset="UTF-8"/>
-<title>Tiny Emulators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+<title>Amstrad CPC Emulator</title>
 <link rel="icon" type="image/png" href="favicon.ico"/>
 <style type="text/css">
-canvas{
-               background-color: blue; 
-               }
 body {
     margin: 0;
-    background-color: transparent;
+    background-color: black;
 }
-.game {
-  background-color: blue;  
-  position: absolute;
+.game {  
+    position: absolute;
     top: 0px;
     left: 0px;
     margin: 0px;
@@ -34,7 +31,7 @@ body {
 }
 </style>
 </head>
-<body style="background-color: transparent;">
+<body>
   <canvas class="game" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
   <script type="text/javascript">
     var Module = {
