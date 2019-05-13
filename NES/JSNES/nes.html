@@ -34,8 +34,18 @@ body {
   //window.onload = function(){nes_load_url("nes-canvas", rom);}
     window.onload = function(){nes_load_url("nes-canvas", "../examples/dt.nes");}
 </script>
+
+            <script>
+        function myFunction() {
+audio_ctx.resume().then(() => {
+    console.log('Playback resumed successfully');
+  });
+}
+        </script>
+    
 </head>
   <body>
     <canvas class="game" id="nes-canvas" width="256" height="240"></canvas>
+      <button onclick="myFunction('');">Sound</button>
   </body>
 </html>
