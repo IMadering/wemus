@@ -37,15 +37,13 @@ body {
 
             <script>
         function myFunction() {
-audio_ctx.resume().then(() => {
-    console.log('Playback resumed successfully');
-  });
+function(){nes_init("nes-canvas");}
 }
         </script>
     
 </head>
   <body>
     <canvas class="game" id="nes-canvas" width="256" height="240"></canvas>
-      <button onclick="nes_init("nes-canvas");">Sound</button>
+      <button onclick="myFunction('');">Sound</button>
   </body>
 </html>
