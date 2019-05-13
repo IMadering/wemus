@@ -34,23 +34,10 @@ body {
   //window.onload = function(){nes_load_url("nes-canvas", rom);}
     window.onload = function(){nes_load_url("nes-canvas", "../examples/dt.nes");}
 </script>
-
-<script type="text/javascript">
-function myFunction() {
-    if(typeof AudioContext != "undefined" || typeof webkitAudioContext != "undefined") {
-       var resumeAudio = function() {
-          if(typeof g_WebAudioContext == "undefined" || g_WebAudioContext == null) return;
-          if(g_WebAudioContext.state == "suspended") g_WebAudioContext.resume();
-          document.removeEventListener("click", resumeAudio);
-       };
-       document.addEventListener("click", resumeAudio);
-    }
-}
-</script>
     
 </head>
   <body>
     <canvas class="game" id="nes-canvas" width="256" height="240"></canvas>
-      <button onclick="myFunction();">Sound</button>
+      <button>Sound</button>
   </body>
 </html>
