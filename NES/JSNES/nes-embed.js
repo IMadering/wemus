@@ -83,6 +83,7 @@ function nes_init(canvas_id){
 	canvas_ctx = canvas.getContext("2d");
 	image = canvas_ctx.getImageData(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	
+	canvas_ctx.imageSmoothingEnabled = false;
 	canvas_ctx.fillStyle = "black";
 	canvas_ctx.fillRect(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
 	
