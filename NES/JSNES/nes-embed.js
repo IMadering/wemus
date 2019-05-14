@@ -97,7 +97,7 @@ function nes_init(canvas_id){
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
 	
-	document.querySelector('button').addEventListener('click', function() {
+	document.querySelector('body').addEventListener('click', function() {
   audio_ctx.resume().then(() => {
     console.log('Playback resumed successfully');
   });
