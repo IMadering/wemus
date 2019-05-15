@@ -98,6 +98,7 @@ function nes_init(canvas_id){
 	script_processor.connect(audio_ctx.destination);
 	
 	document.querySelector('body').addEventListener('mousedown', function() {
+		console.log('EventListener - mousedown');
 		if (audio_ctx.state === 'suspended') {
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
@@ -105,6 +106,7 @@ function nes_init(canvas_id){
 		}
 	});
 	document.querySelector('body').addEventListener('keydown', function() {
+		console.log('EventListener - keydown');
 		if (audio_ctx.state === 'suspended') {
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
