@@ -103,7 +103,7 @@ function nes_init(canvas_id){
 				console.log('Playback resumed successfully');
 			});
 		});
-	}
+	});
 }
 
 function nes_boot(rom_data){
