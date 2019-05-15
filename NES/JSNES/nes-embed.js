@@ -107,6 +107,13 @@ function nes_init(canvas_id){
 	}
 	//document.querySelector('body').addEventListener('mousedown', AudioResume);
 	//document.querySelector('body').addEventListener('keyup', AudioResume);
+	
+	document.querySelector('body').addEventListener('mousedown', function(event) {
+                window.focus();
+                event.preventDefault();
+                event.stopPropagation();
+                event.target.style.cursor = 'default';
+            });
 }
 
 function nes_boot(rom_data){
