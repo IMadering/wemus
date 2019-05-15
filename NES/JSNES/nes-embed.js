@@ -110,7 +110,7 @@ function nes_init(canvas_id){
 	
 	document.addEventListener('mousedown', function(event) {
 		console.log('SSSS');
-                window.focus();
+                //window.focus();
                 event.preventDefault();
                 event.stopPropagation();
                 event.target.style.cursor = 'default';
