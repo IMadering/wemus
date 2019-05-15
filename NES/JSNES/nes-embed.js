@@ -98,10 +98,12 @@ function nes_init(canvas_id){
 	script_processor.connect(audio_ctx.destination);
 	
 	document.querySelector('body').addEventListener('click', function() {
-		audio_ctx.resume().then(() => {
-			console.log('Playback resumed successfully');
+		if (audioCtx.state === 'suspended') {
+			audio_ctx.resume().then(() => {
+				console.log('Playback resumed successfully');
+			});
 		});
-	});
+	}
 }
 
 function nes_boot(rom_data){
