@@ -33,16 +33,18 @@ body {
 <script type="text/javascript" src="nes-embed.js"></script>
 <script>
     var rom = location.search.split('=')[1]; // Get params from URL
-    window.onload = function() {
-        nes_load_url("nes-canvas", rom);
-    }
-    window.onload = function() {
-        console.log('stopPropagation');
-        window.addEventListener('mousedown', function(evt) {
-            window.focus();
-            evt.stopPropagation();
-            evt.target.style.cursor = 'default';
-        }, false);
+    window.onload = {
+        function() {
+            nes_load_url("nes-canvas", rom);
+        },
+        function() {
+            console.log('stopPropagation');
+            window.addEventListener('mousedown', function(evt) {
+                window.focus();
+                evt.stopPropagation();
+                evt.target.style.cursor = 'default';
+            }, false);
+        }
     }
 </script>
 </head>
