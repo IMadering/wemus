@@ -35,10 +35,11 @@ body {
     var Module = {
         preRun: [],
         postRun: (function() {
-            window.addEventListener('mousedown', function(evt) {
+            window.addEventListener('mousedown', function(event) {
                 window.focus();
-                evt.stopPropagation();
-                evt.target.style.cursor = 'default';
+                event.preventDefault();
+                event.stopPropagation();
+                event.target.style.cursor = 'default';
             }, false);
         })(),
         print: (function() {
