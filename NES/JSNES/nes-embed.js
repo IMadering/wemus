@@ -102,7 +102,7 @@ function nes_init(canvas_id){
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
 			});
-		});
+		}
 	});
 }
 
