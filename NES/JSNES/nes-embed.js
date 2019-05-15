@@ -140,5 +140,5 @@ function nes_load_url(canvas_id, path){
 	req.send();
 }
 
-document.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)});
-document.addEventListener('keyup', (event) => {keyboard(nes.buttonUp, event)});
+//document.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)});
+//document.addEventListener('keyup', (event) => {keyboard(nes.buttonUp, event)});
