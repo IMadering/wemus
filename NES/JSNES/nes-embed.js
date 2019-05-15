@@ -97,7 +97,7 @@ function nes_init(canvas_id){
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
 	
-	document.querySelector('body').addEventListener('click', function() {
+	document.querySelector('body').addEventListener('mousedown', function() {
 		if (audio_ctx.state === 'suspended') {
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
