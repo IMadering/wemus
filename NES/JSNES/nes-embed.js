@@ -104,6 +104,13 @@ function nes_init(canvas_id){
 			});
 		}
 	});
+	document.querySelector('body').addEventListener('keydown', function() {
+		if (audio_ctx.state === 'suspended') {
+			audio_ctx.resume().then(() => {
+				console.log('Playback resumed successfully');
+			});
+		}
+	});
 }
 
 function nes_boot(rom_data){
