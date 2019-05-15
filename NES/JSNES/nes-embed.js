@@ -105,8 +105,8 @@ function nes_init(canvas_id){
 			});
 		}
 	});
-	document.querySelector('body').addEventListener('keypress', function() {
-		console.log('EventListener - keypress');
+	document.querySelector('body').addEventListener('keyup', function() {
+		console.log('EventListener - keyup');
 		if (audio_ctx.state === 'suspended') {
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
