@@ -35,13 +35,6 @@ body {
     var rom = location.search.split('=')[1]; // Get params from URL
     window.onload = function() {
         nes_load_url("nes-canvas", rom);
-        window.addEventListener('mousedown', function(evt) {
-            console.log('stopPropagation');
-            window.focus();
-            evt.preventDefault();
-            evt.stopPropagation();
-            evt.target.style.cursor = 'default';
-        }, false);
     }
 </script>
 </head>
