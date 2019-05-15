@@ -97,22 +97,16 @@ function nes_init(canvas_id){
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
 	
-	document.querySelector('body').addEventListener('mousedown', function() {
-		console.log('EventListener - mousedown');
+	function AudioResume() {
+		console.log('AudioResume');
 		if (audio_ctx.state === 'suspended') {
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
 			});
 		}
-	});
-	document.querySelector('body').addEventListener('keyup', function() {
-		console.log('EventListener - keyup');
-		if (audio_ctx.state === 'suspended') {
-			audio_ctx.resume().then(() => {
-				console.log('Playback resumed successfully');
-			});
-		}
-	});
+	}
+	document.querySelector('body').addEventListener('mousedown', AudioResume);
+	document.querySelector('body').addEventListener('keyup', AudioResume);
 }
 
 function nes_boot(rom_data){
