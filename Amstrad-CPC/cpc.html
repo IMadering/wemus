@@ -34,7 +34,7 @@ body {
   <script type="text/javascript">
     var Module = {
         preRun: [],
-        postRun: (function() {
+        postRun: (function() { // FIX stop keys scroll main window
             window.addEventListener('mousedown', function(event) {
                 window.focus();
                 event.preventDefault();
