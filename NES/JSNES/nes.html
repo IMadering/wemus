@@ -34,20 +34,17 @@ body {
 <script>
     var rom = location.search.split('=')[1]; // Get params from URL
     window.onload = function(){nes_load_url("nes-canvas", rom);}
-</script>
-</head>
-  <body>
-    <canvas class="game" id="nes-canvas" width="256" height="240"></canvas>
-    <script type="text/javascript">
-        var Module = {
-            postRun: (function() {
-                window.addEventListener('mousedown', function(evt) {
+    function() {
+        console.log('stopPropagation');
+        window.addEventListener('mousedown', function(evt) {
                     window.focus();
                     evt.stopPropagation();
                     evt.target.style.cursor = 'default';
                 }, false);
-            })(),
-        };
-    </script>
+            }
+</script>
+</head>
+  <body>
+    <canvas class="game" id="nes-canvas" width="256" height="240"></canvas>
   </body>
 </html>
