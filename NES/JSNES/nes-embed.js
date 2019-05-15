@@ -97,8 +97,8 @@ function nes_init(canvas_id){
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
 	
+	// FIX Enable Sound in Chrome browser
 	function AudioResume() {
-		console.log('AudioResume');
 		if (audio_ctx.state === 'suspended') {
 			audio_ctx.resume().then(() => {
 				console.log('Playback resumed successfully');
