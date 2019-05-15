@@ -38,5 +38,15 @@ body {
 </head>
   <body>
     <canvas class="game" id="nes-canvas" width="256" height="240"></canvas>
+    <script type="text/javascript">
+        postRun: (function() {
+            window.addEventListener('mousedown', function(evt) {
+                window.focus();
+                evt.stopPropagation();
+                evt.target.style.cursor = 'default';
+            }, false);
+        })(),
+        };
+    </script>
   </body>
 </html>
