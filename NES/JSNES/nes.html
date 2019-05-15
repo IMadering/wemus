@@ -30,9 +30,8 @@ body {
 <script type="text/javascript" src="jsnes.min.js"></script>
 <script type="text/javascript" src="nes-embed.js"></script>
 <script>
-  var rom = location.search.split('=')[1];
-  //window.onload = function(){nes_load_url("nes-canvas", rom);}
-    window.onload = function(){nes_load_url("nes-canvas", "../examples/dt.nes");}
+    var rom = location.search.split('=')[1]; // Get params from URL
+    window.onload = function(){nes_load_url("nes-canvas", rom);}
 </script>
     
 </head>
