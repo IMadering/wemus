@@ -108,7 +108,8 @@ function nes_init(canvas_id){
 	//document.querySelector('body').addEventListener('mousedown', AudioResume);
 	//document.querySelector('body').addEventListener('keyup', AudioResume);
 	
-	document.querySelector('body').addEventListener('mousedown', function(event) {
+	document.addEventListener('mousedown', function(event) {
+		console.log('SSSS');
                 window.focus();
                 event.preventDefault();
                 event.stopPropagation();
