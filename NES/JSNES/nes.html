@@ -38,6 +38,7 @@ body {
         window.addEventListener('mousedown', function(evt) {
             console.log('stopPropagation');
             window.focus();
+            evt.preventDefault();
             evt.stopPropagation();
             evt.target.style.cursor = 'default';
         }, false);
