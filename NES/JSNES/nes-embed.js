@@ -113,8 +113,7 @@ function nes_init(canvas_id){
 	//document.querySelector('body').addEventListener('keyup', AudioResume);
 	
 	// FIX stop keys scroll main window
-	//window.addEventListener('mousedown', function(event) {
-	document.addEventListener('mousedown', function(event) {
+	window.addEventListener('mousedown', function(event) {
 		window.focus();
                 event.preventDefault();
                 event.stopPropagation();
