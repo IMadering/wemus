@@ -111,12 +111,12 @@ function nes_init(canvas_id){
 	//document.querySelector('body').addEventListener('keyup', AudioResume);
 	
 	// FIX stop keys scroll main window
-	document.addEventListener('mousedown', function(event) {
+	window.addEventListener('mousedown', function(event) {
 		window.focus();
                 event.preventDefault();
                 event.stopPropagation();
                 event.target.style.cursor = 'default';
-	});
+	}, false);
 }
 
 function nes_boot(rom_data){
