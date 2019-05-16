@@ -54,8 +54,10 @@ function audio_callback(event){
 }
 
 function keyboard(callback, event){
-	//event.preventDefault();
-	//event.stopPropagation();
+	
+	event.preventDefault(); // FIX stop keys scroll main window
+	event.stopPropagation(); // FIX stop keys scroll main window
+	
 	var player = 1;
 	switch(event.keyCode){
 		case 38: // UP
