@@ -54,8 +54,8 @@ function audio_callback(event){
 }
 
 function keyboard(callback, event){
-	event.preventDefault();
-	event.stopPropagation();
+	//event.preventDefault();
+	//event.stopPropagation();
 	var player = 1;
 	switch(event.keyCode){
 		case 38: // UP
@@ -110,13 +110,13 @@ function nes_init(canvas_id){
 	//document.querySelector('body').addEventListener('mousedown', AudioResume);
 	//document.querySelector('body').addEventListener('keyup', AudioResume);
 	
+	// FIX stop keys scroll main window
 	document.addEventListener('mousedown', function(event) {
-		console.log('SSSS');
-                window.focus();
+		window.focus();
                 event.preventDefault();
                 event.stopPropagation();
                 event.target.style.cursor = 'default';
-            });
+	});
 }
 
 function nes_boot(rom_data){
@@ -150,7 +150,5 @@ function nes_load_url(canvas_id, path){
 	req.send();
 }
 
-//document.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)});
-//document.addEventListener('keyup', (event) => {keyboard(nes.buttonUp, event)});
-window.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)});
-window.addEventListener('keyup', (event) => {keyboard(nes.buttonUp, event)});
+window.addEventListener('keydown', (event) => {keyboard(nes.buttonDown, event)}); // FIX stop keys scroll main window
+window.addEventListener('keyup', (event) => {keyboard(nes.buttonUp, event)}); // FIX stop keys scroll main window
