@@ -1895,14 +1895,9 @@ class Main {
             req.overrideMimeType("text/plain; charset=x-user-defined");
             req.onerror = () => console.log(`Error loading ${path}: ${req.statusText}`);
             
-            req.onload() {
+            req.onload = function() {
               if (this.status === 200) {
-              
-              this.createAppFromFiles(this.responseText, 0, 0);
-              
-              
-              
-              
+                romFile.value = this.responseText;
               } else if (this.status === 0) {
                 // Aborted, so ignore error
               } else {
@@ -1912,8 +1907,6 @@ class Main {
             
             req.send();
             
-            
-            /* romFile.value = url;
             if (!romFile.value)
                 return;
             const fileList = romFile.files;
@@ -1921,7 +1914,7 @@ class Main {
                 return;
             this.createAppFromFiles(fileList, 0, 0);
             // Clear.
-            romFile.value = ''; */
+            romFile.value = '';
         });
     }
     setUpBlur() {
