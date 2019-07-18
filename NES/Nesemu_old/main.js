@@ -1900,6 +1900,10 @@ class Main {
                 var romd = this.responseText;
                 console.log(romd);
                 
+                console.log('Start createAppFromRom');
+                Main.createAppFromRom(req.romd, 'test', 0, 0);
+                console.log('End createAppFromRom');
+                
               } else if (this.status === 0) {
                 // Aborted, so ignore error
               } else {
@@ -1908,11 +1912,7 @@ class Main {
             };
             
             req.send();
-          console.log('Start createAppFromRom');
-          console.log('>>>${req.romd}');
-          this.createAppFromRom(req.romd, 'test', 0, 0);
-          console.log('End createAppFromRom');
-          
+
         });
     }
     setUpBlur() {
