@@ -1908,7 +1908,7 @@ class Main {
             
             req.send();
           
-          this.createAppFromRom(romd, 'test', 0, 0);
+          this.createAppFromRom(req.romd, 'test', 0, 0);
           
         });
     }
