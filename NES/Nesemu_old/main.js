@@ -1897,8 +1897,7 @@ class Main {
             
             req.onload = function() {
               if (this.status === 200) {
-                
-apps.createAppFromRom(this.responseText, 'test', 0, 0);                
+                var romd = this.responseText;                
                 
               } else if (this.status === 0) {
                 // Aborted, so ignore error
@@ -1908,6 +1907,9 @@ apps.createAppFromRom(this.responseText, 'test', 0, 0);
             };
             
             req.send();
+          
+          this.createAppFromRom(romd, 'test', 0, 0);
+          
         });
     }
     setUpBlur() {
