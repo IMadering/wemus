@@ -5297,6 +5297,10 @@ function getHblankCount(cpuCycle) {
 }
 function isRomValid(romData) {
     // Check header.
+  
+    console.log('Start isRomValid');
+    console.log(romData);
+  
     if (!(romData[0] === 0x4e && romData[1] === 0x45 && romData[2] === 0x53 &&
         romData[3] === 0x1a))
         return false;
