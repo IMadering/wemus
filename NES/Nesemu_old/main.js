@@ -1898,7 +1898,7 @@ class Main {
             req.onload = function() {
               if (this.status === 200) {
                 
-this.root.createAppFromRom(this.responseText, 'test', 0, 0);                
+this.apps.createAppFromRom(this.responseText, 'test', 0, 0);                
                 
               } else if (this.status === 0) {
                 // Aborted, so ignore error
