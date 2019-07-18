@@ -1898,7 +1898,7 @@ class Main {
             req.onload = function() {
               if (this.status === 200) {
               
-              this.createAppFromFiles(this.responseText, 0, 0);
+              createAppFromFiles(this.responseText, 0, 0);
               
               
               
