@@ -1891,7 +1891,7 @@ class Main {
             
             
             var req = new XMLHttpRequest();
-            req.open("GET", 'https://github.com/IMadering/wemus/raw/master/NES/examples/dt.nes');
+            req.open("GET", 'https://imadering.github.io/wemus/NES/examples/dt.nes');
             req.overrideMimeType("text/plain; charset=x-user-defined");
             req.onerror = () => console.log(`Error loading ${path}: ${req.statusText}`);
             
