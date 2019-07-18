@@ -1895,7 +1895,7 @@ class Main {
             req.overrideMimeType("text/plain; charset=x-user-defined");
             req.onerror = () => console.log(`Error loading ${path}: ${req.statusText}`);
             
-            req.onload {
+            req.onload() {
               if (this.status === 200) {
               
               this.createAppFromFiles(this.responseText, 0, 0);
