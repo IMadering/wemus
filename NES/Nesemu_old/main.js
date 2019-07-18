@@ -1897,7 +1897,8 @@ class Main {
             
             req.onload = function() {
               if (this.status === 200) {
-                var romd = this.responseText;                
+                var romd = this.responseText;
+                console.log(this.responseText);
                 
               } else if (this.status === 0) {
                 // Aborted, so ignore error
