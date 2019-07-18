@@ -1897,7 +1897,7 @@ class Main {
             
             req.onload = function() {
               if (this.status === 200) {
-                romFile.value = this.responseText;
+                romFile = this.responseText;
               } else if (this.status === 0) {
                 // Aborted, so ignore error
               } else {
