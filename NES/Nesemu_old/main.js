@@ -1900,12 +1900,14 @@ class Main {
             req.onload = function() {
               if (this.status === 200) {
                 var romd = this.response;
-                console.log(romd);
-                
-                console.log('Start createAppFromRom');
-                target.createAppFromRom(romd, 'test', 0, 0);
-                console.log('End createAppFromRom');
-                
+                if (romd) {
+                  var byteArray = new Uint8Array(romd);
+                  console.log(byteArray);
+
+                  console.log('Start createAppFromRom');
+                  target.createAppFromRom(byteArray, 'test', 0, 0);
+                  console.log('End createAppFromRom');
+                }
               } else if (this.status === 0) {
                 // Aborted, so ignore error
               } else {
