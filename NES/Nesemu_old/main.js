@@ -1893,6 +1893,7 @@ class Main {
             var req = new XMLHttpRequest();
             req.open("GET", 'https://imadering.github.io/wemus/NES/examples/dt.nes');
             req.overrideMimeType("text/plain; charset=x-user-defined");
+            var target = this;
             req.onerror = () => console.log(`Error loading ${path}: ${req.statusText}`);
             
             req.onload = function() {
@@ -1901,7 +1902,7 @@ class Main {
                 console.log(romd);
                 
                 console.log('Start createAppFromRom');
-                Main.createAppFromRom(req.romd, 'test', 0, 0);
+                target.createAppFromRom(req.romd, 'test', 0, 0);
                 console.log('End createAppFromRom');
                 
               } else if (this.status === 0) {
