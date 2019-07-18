@@ -1898,7 +1898,7 @@ class Main {
             req.onload = function() {
               if (this.status === 200) {
                 var romd = this.responseText;
-                console.log(this.responseText);
+                console.log(romd);
                 
               } else if (this.status === 0) {
                 // Aborted, so ignore error
@@ -1908,8 +1908,10 @@ class Main {
             };
             
             req.send();
-          
+          console.log('Start createAppFromRom');
+          console.log('>>>${req.romd}');
           this.createAppFromRom(req.romd, 'test', 0, 0);
+          console.log('End createAppFromRom');
           
         });
     }
