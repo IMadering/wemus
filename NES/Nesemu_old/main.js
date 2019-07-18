@@ -1888,7 +1888,7 @@ class Main {
     setUpOpenRomLink() {
         const romFile = document.getElementById('rom-file');
         romFile.addEventListener('change', () => {
-            var path = 'https://imadering.github.io/wemus/NES/examples/d3t.nes';
+            var path = 'https://imadering.github.io/wemus/NES/examples/dt.nes';
             var req = new XMLHttpRequest();
             req.open('GET', path, true);
             req.overrideMimeType('text/plain; charset=x-user-defined');
@@ -5293,10 +5293,6 @@ function getHblankCount(cpuCycle) {
 }
 function isRomValid(romData) {
     // Check header.
-  
-    console.log('Start isRomValid');
-    console.log(romData);
-  
     if (!(romData[0] === 0x4e && romData[1] === 0x45 && romData[2] === 0x53 &&
         romData[3] === 0x1a))
         return false;
