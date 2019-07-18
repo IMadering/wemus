@@ -1888,25 +1888,20 @@ class Main {
     setUpOpenRomLink() {
         const romFile = document.getElementById('rom-file');
         romFile.addEventListener('change', () => {
-            
-            
+            var path = 'https://imadering.github.io/wemus/NES/examples/d3t.nes';
             var req = new XMLHttpRequest();
-            req.open('GET', 'https://imadering.github.io/wemus/NES/examples/dt.nes', true);
+            req.open('GET', path, true);
             req.overrideMimeType('text/plain; charset=x-user-defined');
             req.responseType = 'arraybuffer';
             var target = this;
             req.onerror = () => console.log(`Error loading ${path}: ${req.statusText}`);
-            
             req.onload = function() {
               if (this.status === 200) {
-                var romd = this.response;
-                if (romd) {
-                  var byteArray = new Uint8Array(romd);
-                  console.log(byteArray);
-
-                  console.log('Start createAppFromRom');
+                var srom = this.response;
+                if (srom) {
+                  var byteArray = new Uint8Array(srom);
+                  //console.log(byteArray);
                   target.createAppFromRom(byteArray, 'test', 0, 0);
-                  console.log('End createAppFromRom');
                 }
               } else if (this.status === 0) {
                 // Aborted, so ignore error
@@ -1914,9 +1909,7 @@ class Main {
                 req.onerror();
               }
             };
-            
             req.send();
-
         });
     }
     setUpBlur() {
