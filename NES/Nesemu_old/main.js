@@ -1898,6 +1898,20 @@ class Main {
             req.onload = function() {
               if (this.status === 200) {
                 romFile = this.responseText;
+                
+                
+                const jsApp = new _app_js_powered_app__WEBPACK_IMPORTED_MODULE_2__["JsApp"](this.wndMgr, {
+                title: 'test',
+                centerX: x,
+                centerY: y,
+                onClosed: (app) => {
+                    this.removeApp(app);
+                },
+            });
+            jsApp.setFile(this.responseText);
+            this.apps.push(jsApp);
+                
+                
               } else if (this.status === 0) {
                 // Aborted, so ignore error
               } else {
@@ -1906,15 +1920,6 @@ class Main {
             };
             
             req.send();
-            
-            if (!romFile.value)
-                return;
-            const fileList = romFile.files;
-            if (!fileList)
-                return;
-            this.createAppFromFiles(fileList, 0, 0);
-            // Clear.
-            romFile.value = '';
         });
     }
     setUpBlur() {
