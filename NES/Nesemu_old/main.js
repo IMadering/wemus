@@ -1902,7 +1902,7 @@ class Main {
                 console.log(romd);
                 
                 console.log('Start createAppFromRom');
-                target.createAppFromRom(req.romd, 'test', 0, 0);
+                target.createAppFromRom(romd, 'test', 0, 0);
                 console.log('End createAppFromRom');
                 
               } else if (this.status === 0) {
