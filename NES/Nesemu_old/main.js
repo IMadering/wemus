@@ -1897,8 +1897,6 @@ class Main {
             
             req.onload = function() {
               if (this.status === 200) {
-                romFile = this.responseText;
-                
                 
                 const jsApp = new _app_js_powered_app__WEBPACK_IMPORTED_MODULE_2__["JsApp"](this.wndMgr, {
                 title: 'test',
