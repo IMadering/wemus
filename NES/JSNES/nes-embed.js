@@ -6,10 +6,10 @@ var canvas_ctx, image;
 var framebuffer_u8, framebuffer_u32;
 
 var AUDIO_BUFFERING = 512;
-var SAMPLE_COUNT = 2*1024; //4*1024;
+var SAMPLE_COUNT = 512; //4*1024;
 var SAMPLE_MASK = SAMPLE_COUNT - 1;
 var audio_samples_L = new Float32Array(SAMPLE_COUNT);
-var audio_samples_R = new Float32Array(SAMPLE_COUNT);
+//var audio_samples_R = new Float32Array(SAMPLE_COUNT);
 var audio_write_cursor = 0, audio_read_cursor = 0;
 
 var nes = new jsnes.NES({
@@ -18,7 +18,7 @@ var nes = new jsnes.NES({
 	},
 	onAudioSample: function(l, r){
 		audio_samples_L[audio_write_cursor] = l;
-		audio_samples_R[audio_write_cursor] = r;
+		//audio_samples_R[audio_write_cursor] = r;
 		audio_write_cursor = (audio_write_cursor + 1) & SAMPLE_MASK;
 	},
 });
