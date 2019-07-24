@@ -9,7 +9,7 @@ var AUDIO_BUFFERING = 512;
 var SAMPLE_COUNT = 4*1024; //4*1024;
 var SAMPLE_MASK = SAMPLE_COUNT - 1;
 var audio_samples_L = new Float32Array(SAMPLE_COUNT);
-//var audio_samples_R = new Float32Array(SAMPLE_COUNT);
+var audio_samples_R = new Float32Array(SAMPLE_COUNT);
 var audio_write_cursor = 0, audio_read_cursor = 0;
 
 var nes = new jsnes.NES({
@@ -18,7 +18,7 @@ var nes = new jsnes.NES({
 	},
 	onAudioSample: function(l, r){
 		audio_samples_L[audio_write_cursor] = l;
-		//audio_samples_R[audio_write_cursor] = r;
+		audio_samples_R[audio_write_cursor] = r;
 		audio_write_cursor = (audio_write_cursor + 1) & SAMPLE_MASK;
 	},
 });
@@ -97,7 +97,7 @@ function nes_init(canvas_id){
 	
 	// Setup audio.
 	var audio_ctx = new window.AudioContext();
-	var script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 2);
+	var script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 1);
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
 	
