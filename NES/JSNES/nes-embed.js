@@ -97,7 +97,7 @@ function nes_init(canvas_id){
 	
 	// Setup audio.
 	var audio_ctx = new window.AudioContext();
-	var script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 1);
+	var script_processor = audio_ctx.createScriptProcessor(AUDIO_BUFFERING, 0, 2);
 	script_processor.onaudioprocess = audio_callback;
 	script_processor.connect(audio_ctx.destination);
 	
