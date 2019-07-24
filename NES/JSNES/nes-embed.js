@@ -5,7 +5,7 @@ var FRAMEBUFFER_SIZE = SCREEN_WIDTH*SCREEN_HEIGHT;
 var canvas_ctx, image;
 var framebuffer_u8, framebuffer_u32;
 
-var AUDIO_BUFFERING = 16384; //512;
+var AUDIO_BUFFERING = 256; //512;
 var SAMPLE_COUNT = 4*1024;
 var SAMPLE_MASK = SAMPLE_COUNT - 1;
 var audio_samples_L = new Float32Array(SAMPLE_COUNT);
