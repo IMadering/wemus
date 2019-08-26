@@ -40,7 +40,7 @@ function audio_callback(event){
 	var len = dst.length;
 	
 	// Attempt to avoid buffer underruns.
-	if(audio_remain() < AUDIO_BUFFERING) nes.frame();
+	//if(audio_remain() < AUDIO_BUFFERING) nes.frame();
 	
 	var dst_l = dst.getChannelData(0);
 	var dst_r = dst.getChannelData(1);
