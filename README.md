@@ -8,6 +8,9 @@
 * [JSNES](https://imadering.github.io/wemus/NES/JSNES/nes.html)
   * **Parameters:** ?rom=name.nes
   * **Source:** https://github.com/bfirsh/jsnes
+* [WebMSX](https://imadering.github.io/wemus/MSX/)
+  * **Parameters:** ?rom=name.rom
+  * **Source:** https://github.com/ppeccin/webmsx
 
 # Tools:
 * [Javascript compressor](http://javascriptcompressor.com)
